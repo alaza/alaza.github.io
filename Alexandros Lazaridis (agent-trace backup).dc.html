@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  section[id] { scroll-margin-top: 84px; }
+  ::selection { background: var(--accent, #1f6f6b); color: #fff; }
+  @keyframes wave { 0% { transform: scaleY(0.35); } 100% { transform: scaleY(1); } }
+  @keyframes blink { 0%, 45% { opacity: 1; } 55%, 100% { opacity: 0.15; } }
+  a { color: inherit; }
+</style>
+</helmet>
+<div style="min-height:100vh; background: var(--bg,#f7f5f0); color: var(--ink,#1c1b18); --accent: {{ accent }}; --bg: {{ bg }}; --ink: {{ ink }}; --muted: {{ muted }}; --panel: {{ panel }}; --hair: {{ hair }}; font-family:'IBM Plex Sans', -apple-system, sans-serif; -webkit-font-smoothing:antialiased; line-height:1.55;">
+
+  <header style="position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.4) blur(8px); background: var(--bg,#f7f5f0); border-bottom:1px solid var(--hair,rgba(28,27,24,0.1));">
+    <div style="max-width:1080px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+      <a href="#top" style="text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.04em; font-weight:500;">A. Lazaridis</a>
+      <nav style="display:flex; gap:26px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em;">
+        <a href="#about" style="text-decoration:none; color:var(--muted,#6f6a60);">About</a>
+        <a href="#focus" style="text-decoration:none; color:var(--muted,#6f6a60);">Expertise</a>
+        <a href="#experience" style="text-decoration:none; color:var(--muted,#6f6a60);">Experience</a>
+        <a href="#projects" style="text-decoration:none; color:var(--muted,#6f6a60);">Work</a>
+        <a href="#contact" style="text-decoration:none; color:var(--muted,#6f6a60);">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <a id="top"></a>
+
+  <!-- HERO -->
+  <section style="max-width:1080px; margin:0 auto; padding:96px 32px 64px;">
+    <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent,#1f6f6b); margin-bottom:28px;">Conversational AI &middot; GenAI &middot; Analytics &middot; Switzerland</div>
+    <h1 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(44px, 7vw, 88px); line-height:1.02; letter-spacing:-0.015em; margin:0 0 28px;">Alexandros<br>Lazaridis</h1>
+    <p style="font-family:'Newsreader', serif; font-size:clamp(20px,2.4vw,27px); line-height:1.5; max-width:720px; color:var(--ink,#1c1b18); margin:0 0 18px;">Senior Technical Product Owner &amp; Staff Data Engineer — turning ambiguous business problems into <em style="font-style:italic; color:var(--accent,#1f6f6b);">AI-driven products</em>.</p>
+    <p style="font-size:16px; line-height:1.7; max-width:600px; color:var(--muted,#6f6a60); margin:0 0 36px;">15+ years bridging business and data-driven solutions across conversational AI, GenAI and analytics — with a PhD and 40+ publications behind the product instinct.</p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:52px;">
+      <a href="{{ links.email }}" style="text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em; padding:11px 18px; border:1px solid var(--ink,#1c1b18); border-radius:2px; color:var(--ink,#1c1b18);" style-hover="background: var(--ink,#1c1b18); color: var(--bg,#f7f5f0);">Email</a>
+      <a href="{{ links.linkedin }}" target="_blank" rel="noopener" style="text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em; padding:11px 18px; border:1px solid var(--hair,rgba(28,27,24,0.2)); border-radius:2px; color:var(--ink,#1c1b18);" style-hover="border-color: var(--ink,#1c1b18);">LinkedIn &#8599;</a>
+      <a href="{{ links.cv }}" target="_blank" rel="noopener" style="text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em; padding:11px 18px; border:1px solid var(--hair,rgba(28,27,24,0.2)); border-radius:2px; color:var(--ink,#1c1b18);" style-hover="border-color: var(--ink,#1c1b18);">Curriculum Vitae &#8599;</a>
+      <a href="{{ links.scholar }}" target="_blank" rel="noopener" style="text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em; padding:11px 18px; border:1px solid var(--hair,rgba(28,27,24,0.2)); border-radius:2px; color:var(--ink,#1c1b18);" style-hover="border-color: var(--ink,#1c1b18);">Scholar &#8599;</a>
+    </div>
+
+    <!-- agent trace motif -->
+    <div style="max-width:620px; border:1px solid var(--hair,rgba(28,27,24,0.14)); border-radius:6px; background:var(--panel,#fffdf9); overflow:hidden;">
+      <div style="display:flex; align-items:center; gap:9px; padding:13px 18px; border-bottom:1px solid var(--hair,rgba(28,27,24,0.1));">
+        <span style="width:7px; height:7px; border-radius:50%; background:var(--accent,#1f6f6b); animation: blink 1.4s ease-in-out infinite;"></span>
+        <span style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted,#6f6a60);">Conversational insights &middot; agent trace</span>
+      </div>
+      <div style="padding:18px 18px 20px;">
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--muted,#6f6a60); margin-bottom:16px;">&#10095; {{ convoQ }}</div>
+        <div style="display:flex; flex-wrap:wrap; gap:7px 16px; margin-bottom:16px;">
+          <sc-for list="{{ traceSteps }}" as="step" hint-placeholder-count="4">
+            <span style="display:inline-flex; align-items:center; gap:7px; font-family:'IBM Plex Mono', monospace; font-size:11px; color:{{ step.txt }};">
+              <span style="width:6px; height:6px; border-radius:50%; background:{{ step.dot }};"></span>{{ step.label }}
+            </span>
+          </sc-for>
+        </div>
+        <div style="font-family:'Newsreader', serif; font-size:18px; line-height:1.5; color:var(--ink,#1c1b18); min-height:54px;">{{ streamText }}<span style="display:inline-block; width:8px; height:18px; background:var(--accent,#1f6f6b); margin-left:2px; vertical-align:-3px; animation: blink 1s step-end infinite;"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section style="border-top:1px solid var(--hair,rgba(28,27,24,0.1)); border-bottom:1px solid var(--hair,rgba(28,27,24,0.1));">
+    <div style="max-width:1080px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:repeat(4, 1fr);">
+      <div style="padding:34px 0; border-right:1px solid var(--hair,rgba(28,27,24,0.1));">
+        <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">15+ yrs</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted,#6f6a60);">Bridging business &amp; AI</div>
+      </div>
+      <div style="padding:34px 0 34px 30px; border-right:1px solid var(--hair,rgba(28,27,24,0.1));">
+        <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">3</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted,#6f6a60);">Conv. AI products shipped</div>
+      </div>
+      <div style="padding:34px 0 34px 30px; border-right:1px solid var(--hair,rgba(28,27,24,0.1));">
+        <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">40+</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted,#6f6a60);">Peer-reviewed publications</div>
+      </div>
+      <div style="padding:34px 0 34px 30px;">
+        <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">PhD</div>
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted,#6f6a60);">Speech processing &amp; ML</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+    <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent,#1f6f6b);">01 — About</div>
+      <div style="max-width:660px;">
+        <p style="font-family:'Newsreader', serif; font-size:clamp(20px,2vw,24px); line-height:1.6; margin:0 0 24px;">I'm a senior technical product owner and AI/data leader who likes living where the business problem meets the system architecture.</p>
+        <p style="font-size:16.5px; line-height:1.75; color:var(--muted,#6f6a60); margin:0 0 20px;">At Swisscom I've spent 3+ years as a Product Owner, owning the vision, strategy and roadmap for three conversational-AI products from concept to launch across two cross-functional teams. Today I'm a Staff Data Engineer and Deputy Product Owner for Conversational AI, GenAI &amp; Analytics — pairing product strategy with hands-on engineering, comfortable in any conversation about data models, APIs or LLM pipelines.</p>
+        <p style="font-size:16.5px; line-height:1.75; color:var(--muted,#6f6a60); margin:0;">Before product, I was Director of Speech Processing R&amp;D, partnering with Microsoft Research, EPFL/Idiap and the University of Zurich. I hold a PhD in speech processing &amp; machine learning, have authored 40+ peer-reviewed publications, and am SAFe® 5 PO/PM certified.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section id="focus" style="border-top:1px solid var(--hair,rgba(28,27,24,0.1)); background:var(--panel,#fffdf9);">
+    <div style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+      <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent,#1f6f6b);">02 — Expertise</div>
+        <div>
+          <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(28px,3.4vw,40px); line-height:1.1; margin:0 0 40px; letter-spacing:-0.01em;">What I do best</h2>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--hair,rgba(28,27,24,0.12));">
+            <sc-for list="{{ focus }}" as="area" hint-placeholder-count="6">
+              <div style="background:var(--panel,#fffdf9); padding:26px 24px;">
+                <div style="font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--accent,#1f6f6b); margin-bottom:12px;">{{ area.no }}</div>
+                <div style="font-family:'Newsreader', serif; font-size:21px; margin-bottom:8px;">{{ area.title }}</div>
+                <div style="font-size:14.5px; line-height:1.6; color:var(--muted,#6f6a60);">{{ area.desc }}</div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top:36px; display:flex; flex-wrap:wrap; gap:8px;">
+            <sc-for list="{{ stack }}" as="tag" hint-placeholder-count="8">
+              <span style="font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.02em; padding:7px 12px; border:1px solid var(--hair,rgba(28,27,24,0.18)); border-radius:2px; color:var(--muted,#6f6a60);">{{ tag }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+    <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent,#1f6f6b);">03 — Experience</div>
+      <div>
+        <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(28px,3.4vw,40px); line-height:1.1; margin:0 0 44px; letter-spacing:-0.01em;">From research bench to product roadmap</h2>
+        <sc-for list="{{ experience }}" as="job" hint-placeholder-count="5">
+          <div style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair,rgba(28,27,24,0.12));">
+            <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted,#6f6a60); padding-top:4px;">{{ job.years }}</div>
+            <div>
+              <div style="font-family:'Newsreader', serif; font-size:22px; line-height:1.25; margin-bottom:3px;">{{ job.role }}</div>
+              <div style="font-size:14.5px; color:var(--accent,#1f6f6b); margin-bottom:10px;">{{ job.org }}</div>
+              <div style="font-size:15px; line-height:1.65; color:var(--muted,#6f6a60); max-width:560px;">{{ job.desc }}</div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="border-top:1px solid var(--hair,rgba(28,27,24,0.12));"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="projects" style="border-top:1px solid var(--hair,rgba(28,27,24,0.1)); background:var(--panel,#fffdf9);">
+    <div style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+      <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+        <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent,#1f6f6b);">04 — Work</div>
+        <div>
+          <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(28px,3.4vw,40px); line-height:1.1; margin:0 0 16px; letter-spacing:-0.01em;">Selected work</h2>
+          <p style="font-size:15px; color:var(--muted,#6f6a60); margin:0 0 40px; max-width:540px;">Conversational-AI &amp; GenAI products shipped at Swisscom, grounded in two decades of funded speech research.</p>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+            <sc-for list="{{ projects }}" as="proj" hint-placeholder-count="6">
+              <div style="background:var(--bg,#f7f5f0); border:1px solid var(--hair,rgba(28,27,24,0.12)); border-radius:3px; padding:24px;">
+                <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:12px;">
+                  <div style="font-family:'IBM Plex Mono', monospace; font-size:14px; font-weight:500; color:var(--accent,#1f6f6b);">{{ proj.name }}</div>
+                  <div style="font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.04em; color:var(--muted,#6f6a60); white-space:nowrap;">{{ proj.funder }}</div>
+                </div>
+                <div style="font-size:14.5px; line-height:1.6; color:var(--ink,#1c1b18);">{{ proj.desc }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+    <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent,#1f6f6b);">05 — Research</div>
+      <div style="max-width:660px;">
+        <p style="font-family:'Newsreader', serif; font-size:clamp(20px,2vw,25px); line-height:1.55; margin:0 0 28px;">40+ peer-reviewed publications since 2005 — 15+ journal articles and book chapters, 25+ international conference papers on speech recognition, synthesis, voice conversion and prosody.</p>
+        <a href="{{ links.scholar }}" target="_blank" rel="noopener" style="display:inline-block; text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:13px; padding:13px 22px; background:var(--ink,#1c1b18); color:var(--bg,#f7f5f0); border-radius:2px;">View full list on Google Scholar &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <section id="contact" style="border-top:1px solid var(--ink,#1c1b18); background:var(--ink,#1c1b18); color:var(--bg,#f7f5f0);">
+    <div style="max-width:1080px; margin:0 auto; padding:88px 32px 56px;">
+      <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent,#1f6f6b); margin-bottom:28px;">06 — Contact</div>
+      <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(32px,5vw,60px); line-height:1.05; margin:0 0 40px; letter-spacing:-0.01em; max-width:760px;">Let's build something with AI.</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:36px; font-family:'IBM Plex Mono', monospace; font-size:13.5px;">
+        <a href="{{ links.email }}" style="text-decoration:none; border-bottom:1px solid var(--accent,#1f6f6b); padding-bottom:3px;">alaza@live.com</a>
+        <a href="{{ links.linkedin }}" target="_blank" rel="noopener" style="text-decoration:none; border-bottom:1px solid var(--accent,#1f6f6b); padding-bottom:3px;">LinkedIn &#8599;</a>
+        <a href="{{ links.scholar }}" target="_blank" rel="noopener" style="text-decoration:none; border-bottom:1px solid var(--accent,#1f6f6b); padding-bottom:3px;">Google Scholar &#8599;</a>
+        <a href="{{ links.cv }}" target="_blank" rel="noopener" style="text-decoration:none; border-bottom:1px solid var(--accent,#1f6f6b); padding-bottom:3px;">Curriculum Vitae &#8599;</a>
+      </div>
+      <div style="margin-top:72px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.14); display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:rgba(255,255,255,0.45);">
+        <span>Alexandros Lazaridis, PhD</span>
+        <span>Bülach, Switzerland</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;options&quot;:[&quot;#1f6f6b&quot;,&quot;#a24b34&quot;,&quot;#3a4a8c&quot;,&quot;#5d6a35&quot;],&quot;default&quot;:&quot;#1f6f6b&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Paper&quot;,&quot;Ink&quot;],&quot;default&quot;:&quot;Paper&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;}}">
+class Component extends DCLogic {
+  phrases = [
+    { q: 'Where do customers drop off in self-service?', insight: '32% abandon at identity check — add a one-tap re-auth.' },
+    { q: 'What are callers asking the voicebot most?', insight: 'Billing and roaming dominate — auto-route the top 12 intents.' },
+    { q: 'Is the assistant resolving issues end-to-end?', insight: '68% contained; plan changes escalate — add a guided flow.' },
+  ];
+  stepLabels = ['Parsing intent', 'Retrieving context', 'Reasoning', 'Generating insight'];
+  state = { phrase: 0, charCount: 0, paused: 0, step: 0 };
+
+  componentDidMount() {
+    this._t1 = setInterval(() => this.tick(), 48);
+    this._t2 = setInterval(() => this.setState(s => ({ step: (s.step + 1) % (this.stepLabels.length + 1) })), 820);
+  }
+  componentWillUnmount() { clearInterval(this._t1); clearInterval(this._t2); }
+  tick() {
+    this.setState(s => {
+      const full = this.phrases[s.phrase].insight;
+      if (s.paused > 0) {
+        if (s.paused === 1) return { paused: 0, charCount: 0, phrase: (s.phrase + 1) % this.phrases.length };
+        return { paused: s.paused - 1 };
+      }
+      if (s.charCount < full.length) return { charCount: s.charCount + 1 };
+      return { paused: 34 };
+    });
+  }
+
+  renderVals() {
+    const themes = {
+      Paper: { bg:'#f7f5f0', ink:'#1c1b18', muted:'#6f6a60', panel:'#fffdf9', hair:'rgba(28,27,24,0.12)' },
+      Ink:   { bg:'#121311', ink:'#ece9e2', muted:'#9a958a', panel:'#1b1c19', hair:'rgba(236,233,226,0.13)' },
+    };
+    const t = themes[this.props.theme] || themes.Paper;
+    const accent = this.props.accent || '#1f6f6b';
+
+    const st = this.state;
+    const ph = this.phrases[st.phrase];
+    const convoQ = ph.q;
+    const streamText = ph.insight.slice(0, st.charCount);
+    const traceSteps = this.stepLabels.map((label, i) => ({
+      label,
+      dot: i < st.step ? accent : 'var(--hair,rgba(28,27,24,0.18))',
+      txt: i < st.step ? 'var(--ink,#1c1b18)' : 'var(--muted,#6f6a60)',
+    }));
+
+    const focus = [
+      { no:'/ 01', title:'Product Leadership & Vision', desc:'Strategy and roadmap, concept-to-launch ownership, data-driven backlog prioritization and KPI definition.' },
+      { no:'/ 02', title:'Stakeholder Liaison', desc:'The bridge between business leaders, operators, data scientists and engineers — aligning teams and communicating up.' },
+      { no:'/ 03', title:'Business → Data Solutions', desc:'Converting ambiguous business problems into clear requirements, user stories and acceptance criteria.' },
+      { no:'/ 04', title:'AI / Data Fluency', desc:'LLMs, GenAI, prompt engineering, embeddings, ML pipelines and eval harnesses — a credible partner to engineering.' },
+      { no:'/ 05', title:'Technical Aptitude', desc:'Data models, APIs and system architecture across AWS (Bedrock, Glue, Step Functions, Athena), Python and SQL.' },
+      { no:'/ 06', title:'Mentoring & Team Building', desc:'Mentored junior POs and engineers; SAFe® 5 PO/PM certified; supervised Master and PhD theses.' },
+    ];
+
+    const stack = ['LLMs / GenAI', 'Prompt engineering', 'AWS Bedrock', 'Glue · Step Functions', 'Athena', 'Python', 'SQL', 'QuickSight / SPICE', 'SAFe® 5 PO/PM'];
+
+    const experience = [
+      { years:'2024 — present', role:'Staff Data Engineer & Deputy Product Owner', org:'Swisscom, Zurich — DNA Group (GenAI & Conv. AI)', desc:'Designing and deploying LLM-powered analytics pipelines on AWS (Bedrock, Glue, Step Functions, Athena) integrating Claude, Azure OpenAI and fine-tuned models — plus KPI frameworks, governance, and PII redaction. Deputy PO since Feb 2026.' },
+      { years:'2021 — 2025', role:'Product Owner — Conversational AI', org:'Swisscom, Zurich — DNA Group', desc:'Led two cross-functional teams over 3+ years, owning three products from concept to launch: a Voice Assistant on TV Box, a VoiceBot/Chatbot for self-service, and Conversational Insights for customer-needs understanding.' },
+      { years:'2017 — 2022', role:'Director — Speech Processing R&D', org:'Swisscom, Zurich', desc:'Set research direction across ASR (Swiss German), language ID, speaker verification, sentiment, TTS, NLU and neural MT — partnering with Microsoft Research, EPFL/Idiap and the University of Zurich, including a "Fairness in AI" initiative.' },
+      { years:'2012 — 2017', role:'Researcher — Speech & Prosody', org:'Idiap Research Institute, Martigny', desc:'Speech synthesis and prosody modelling (SIWIS / Swiss NSF), multilingual ASR (SUMMA / EU H2020), and Swiss German dialect ASR through the Swisscom partnership.' },
+      { years:'2011 — 2012', role:'Post-doctoral Researcher', org:'University of Patras, Greece', desc:'Prosody modelling of neutral and emotional speech, and statistical parametric speech synthesis approaches.' },
+    ];
+
+    const projects = [
+      { name:'Voice Assistant', funder:'PRODUCT', desc:'Conversational voice assistant on the Swisscom TV Box.' },
+      { name:'VoiceBot / Chatbot', funder:'PRODUCT', desc:'Customer self-service across voice and chat channels.' },
+      { name:'Conversational Insights', funder:'PRODUCT', desc:'Understanding customer needs from conversation data.' },
+      { name:'Swiss German ASR', funder:'MS RESEARCH', desc:'Multi-year dialect speech-recognition collaboration with Microsoft Research.' },
+      { name:'SUMMA', funder:'EU H2020', desc:'Scalable understanding of multilingual media.' },
+      { name:'SIWIS', funder:'SWISS NSF', desc:'Spoken interaction with interpretation in Switzerland.' },
+    ];
+
+    const links = {
+      scholar: 'http://scholar.google.ch/citations?user=spFLsi8AAAAJ&hl=en',
+      linkedin: 'https://www.linkedin.com/in/alexandros-lazaridis-0325a649',
+      cv: 'https://www.dropbox.com/scl/fi/vohqfm1eykeqmewcih3qr/Alexandros_Lazaridis_2024.pdf?rlkey=11ei8zuxrdcvtyuk24lsgki5i&dl=0',
+      email: 'mailto:alaza@live.com',
+    };
+
+    return { accent, bg:t.bg, ink:t.ink, muted:t.muted, panel:t.panel, hair:t.hair, convoQ, streamText, traceSteps, focus, stack, experience, projects, links };
+  }
+}
+</script>
+</body>
+</html>
