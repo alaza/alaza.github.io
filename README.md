@@ -1,3 +1,2 @@
 # alaza.github.io
-# alaza.github.io
-# alaza.github.io
+# Alexandros Lazaridis personal webpage
