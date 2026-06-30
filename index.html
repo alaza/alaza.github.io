@@ -18,6 +18,19 @@
   a { color: inherit; }
   a.btn:hover { background: #1c1b18; color: #f7f5f0; }
   a.btn-outline:hover { border-color: #1c1b18; }
+  @media (max-width: 720px) {
+    .header-bar { padding: 14px 20px !important; }
+    .nav-links { display: none !important; }
+    .hero-pad { padding: 64px 20px 40px !important; }
+    .wrap-pad { padding: 60px 20px !important; }
+    .contact-pad { padding: 60px 20px 44px !important; }
+    .colgrid { grid-template-columns: 1fr !important; gap: 16px !important; }
+    .stats-grid { grid-template-columns: 1fr 1fr !important; padding: 0 20px !important; }
+    .stat-cell { padding: 22px 0 !important; border-right: none !important; }
+    .cards-2 { grid-template-columns: 1fr !important; }
+    .exp-row { grid-template-columns: 1fr !important; gap: 4px !important; }
+    .agent-graph { transform: scale(0.54); transform-origin: top left; height: 115px !important; }
+  }
   :root {
     --accent: #1f6f6b;
     --bg: #f7f5f0;
@@ -32,9 +45,9 @@
 <div style="min-height:100vh; background: var(--bg); color: var(--ink); font-family:'IBM Plex Sans', -apple-system, sans-serif; -webkit-font-smoothing:antialiased; line-height:1.55;">
 
   <header style="position:sticky; top:0; z-index:50; backdrop-filter:saturate(1.4) blur(8px); background: var(--bg); border-bottom:1px solid var(--hair);">
-    <div style="max-width:1080px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+    <div class="header-bar" style="max-width:1080px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
       <a href="#top" style="text-decoration:none; font-family:'IBM Plex Mono', monospace; font-size:13px; letter-spacing:0.04em; font-weight:500;">A. Lazaridis</a>
-      <nav style="display:flex; gap:26px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em;">
+      <nav class="nav-links" style="display:flex; gap:26px; font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.02em;">
         <a href="#about" style="text-decoration:none; color:var(--muted);">About</a>
         <a href="#focus" style="text-decoration:none; color:var(--muted);">Expertise</a>
         <a href="#experience" style="text-decoration:none; color:var(--muted);">Experience</a>
@@ -52,7 +65,7 @@
   </div>
 
   <!-- HERO -->
-  <section style="max-width:1080px; margin:0 auto; padding:96px 32px 64px;">
+  <section class="hero-pad" style="max-width:1080px; margin:0 auto; padding:96px 32px 64px;">
     <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; letter-spacing:0.16em; text-transform:uppercase; color:var(--accent); margin-bottom:28px;">Conversational AI &middot; GenAI &middot; Analytics &middot; Switzerland</div>
     <h1 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(44px, 7vw, 88px); line-height:1.02; letter-spacing:-0.015em; margin:0 0 28px;">Alexandros<br>Lazaridis, PhD</h1>
     <p style="font-family:'Newsreader', serif; font-size:clamp(20px,2.4vw,27px); line-height:1.5; max-width:720px; color:var(--ink); margin:0 0 18px;">Senior Technical Product Owner &amp; Staff Data Engineer<br>Turning ambiguous business problems into <em style="font-style:italic; color:var(--accent);">AI-driven products</em>.</p>
@@ -66,7 +79,8 @@
     </div>
 
     <!-- agent orchestration graph -->
-    <div style="position:relative; width:100%; max-width:600px; height:210px; margin-bottom:40px;">
+    <div class="agent-wrap" style="position:relative; width:100%; max-width:600px; margin-bottom:40px; overflow:hidden;">
+      <div class="agent-graph" style="position:relative; width:600px; height:210px;">
       <svg viewBox="0 0 600 210" width="100%" height="210" style="position:absolute; inset:0; overflow:visible;">
         <line x1="44" y1="105" x2="248" y2="105" style="stroke:var(--hair); stroke-width:1.25px;"></line>
         <line x1="248" y1="105" x2="498" y2="42" style="stroke:var(--hair); stroke-width:1.25px;"></line>
@@ -98,26 +112,28 @@
         <span style="width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse 1.8s ease-in-out 1.2s infinite;"></span>
         <span style="font-family:'IBM Plex Mono', monospace; font-size:11.5px; letter-spacing:0.03em; color:var(--ink);">Insight</span>
       </div>
-      <div style="position:absolute; left:0; bottom:-30px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.13em; text-transform:uppercase; color:var(--muted);">Multi-agent orchestration</div>
+      </div>
+      <div style="margin-top:14px; font-family:'IBM Plex Mono', monospace; font-size:10.5px; letter-spacing:0.13em; text-transform:uppercase; color:var(--muted);">Multi-agent orchestration</div>
     </div>
   </section>
 
   <!-- STATS STRIP -->
   <section style="border-top:1px solid var(--hair); border-bottom:1px solid var(--hair);">
     <div style="max-width:1080px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:repeat(4, 1fr);">
-      <div style="padding:34px 0; border-right:1px solid var(--hair);">
+    <div class="stats-grid" style="max-width:1080px; margin:0 auto; padding:0 32px; display:grid; grid-template-columns:repeat(4, 1fr);">
+      <div class="stat-cell" style="padding:34px 0; border-right:1px solid var(--hair);">
         <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">15+ yrs</div>
         <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted);">Bridging business &amp; AI</div>
       </div>
-      <div style="padding:34px 0 34px 30px; border-right:1px solid var(--hair);">
+      <div class="stat-cell" style="padding:34px 0 34px 30px; border-right:1px solid var(--hair);">
         <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">3</div>
         <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted);">Conv. AI products shipped</div>
       </div>
-      <div style="padding:34px 0 34px 30px; border-right:1px solid var(--hair);">
+      <div class="stat-cell" style="padding:34px 0 34px 30px; border-right:1px solid var(--hair);">
         <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">40+</div>
         <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted);">Peer-reviewed publications</div>
       </div>
-      <div style="padding:34px 0 34px 30px;">
+      <div class="stat-cell" style="padding:34px 0 34px 30px;">
         <div style="font-family:'Newsreader', serif; font-size:38px; line-height:1; margin-bottom:8px;">PhD</div>
         <div style="font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:0.07em; text-transform:uppercase; color:var(--muted);">Speech processing &amp; ML</div>
       </div>
@@ -125,8 +141,8 @@
   </section>
 
   <!-- ABOUT -->
-  <section id="about" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
-    <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+  <section id="about" class="wrap-pad" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+    <div class="colgrid" style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
       <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);">01 — About</div>
       <div style="max-width:660px;">
         <p style="font-family:'Newsreader', serif; font-size:clamp(20px,2vw,24px); line-height:1.6; margin:0 0 24px;">I'm a senior technical product owner and AI/data leader who likes living where the business problem meets the system architecture.</p>
@@ -138,12 +154,12 @@
 
   <!-- EXPERTISE -->
   <section id="focus" style="border-top:1px solid var(--hair); background:var(--panel);">
-    <div style="max-width:1080px; margin:0 auto; padding:96px 32px;">
-      <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+    <div class="wrap-pad" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+      <div class="colgrid" style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
         <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);">02 — Expertise</div>
         <div>
           <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(28px,3.4vw,40px); line-height:1.1; margin:0 0 40px; letter-spacing:-0.01em;">What I do best</h2>
-          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--hair);">
+          <div class="cards-2" style="display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--hair);">
             <div style="background:var(--panel); padding:26px 24px;">
               <div style="font-family:'IBM Plex Mono', monospace; font-size:11.5px; color:var(--accent); margin-bottom:12px;">/ 01</div>
               <div style="font-family:'Newsreader', serif; font-size:21px; margin-bottom:8px;">Product Leadership &amp; Vision</div>
@@ -192,13 +208,13 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
-    <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+  <section id="experience" class="wrap-pad" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+    <div class="colgrid" style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
       <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);">03 — Experience</div>
       <div>
         <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(28px,3.4vw,40px); line-height:1.1; margin:0 0 44px; letter-spacing:-0.01em;">From research bench to product roadmap</h2>
 
-        <div style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
+        <div class="exp-row" style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
           <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); padding-top:4px;">2024 — present</div>
           <div>
             <div style="font-family:'Newsreader', serif; font-size:22px; line-height:1.25; margin-bottom:3px;">Staff Data Engineer</div>
@@ -207,7 +223,7 @@
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
+        <div class="exp-row" style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
           <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); padding-top:4px;">2021 — 2025</div>
           <div>
             <div style="font-family:'Newsreader', serif; font-size:22px; line-height:1.25; margin-bottom:3px;">Product Owner — Conversational AI</div>
@@ -216,7 +232,7 @@
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
+        <div class="exp-row" style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
           <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); padding-top:4px;">2017 — 2022</div>
           <div>
             <div style="font-family:'Newsreader', serif; font-size:22px; line-height:1.25; margin-bottom:3px;">Director — Speech Processing R&amp;D</div>
@@ -225,7 +241,7 @@
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
+        <div class="exp-row" style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
           <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); padding-top:4px;">2012 — 2017</div>
           <div>
             <div style="font-family:'Newsreader', serif; font-size:22px; line-height:1.25; margin-bottom:3px;">Researcher — Speech &amp; Prosody</div>
@@ -234,7 +250,7 @@
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
+        <div class="exp-row" style="display:grid; grid-template-columns:140px 1fr; gap:28px; padding:26px 0; border-top:1px solid var(--hair);">
           <div style="font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--muted); padding-top:4px;">2011 — 2012</div>
           <div>
             <div style="font-family:'Newsreader', serif; font-size:22px; line-height:1.25; margin-bottom:3px;">Post-doctoral Researcher</div>
@@ -250,13 +266,13 @@
 
   <!-- WORK -->
   <section id="projects" style="border-top:1px solid var(--hair); background:var(--panel);">
-    <div style="max-width:1080px; margin:0 auto; padding:96px 32px;">
-      <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+    <div class="wrap-pad" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+      <div class="colgrid" style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
         <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);">04 — Work</div>
         <div>
           <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(28px,3.4vw,40px); line-height:1.1; margin:0 0 16px; letter-spacing:-0.01em;">Selected work</h2>
           <p style="font-size:15px; color:var(--muted); margin:0 0 40px; max-width:540px;">Conversational-AI &amp; GenAI products shipped at Swisscom, grounded in two decades of funded speech research.</p>
-          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+          <div class="cards-2" style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
             <div style="background:var(--bg); border:1px solid var(--hair); border-radius:3px; padding:24px;">
               <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:12px;">
                 <div style="font-family:'IBM Plex Mono', monospace; font-size:14px; font-weight:500; color:var(--accent);">Voice Assistant</div>
@@ -306,8 +322,8 @@
   </section>
 
   <!-- PUBLICATIONS -->
-  <section id="publications" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
-    <div style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
+  <section id="publications" class="wrap-pad" style="max-width:1080px; margin:0 auto; padding:96px 32px;">
+    <div class="colgrid" style="display:grid; grid-template-columns:200px 1fr; gap:48px;">
       <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent);">05 — Research</div>
       <div style="max-width:660px;">
         <p style="font-family:'Newsreader', serif; font-size:clamp(20px,2vw,25px); line-height:1.55; margin:0 0 28px;">40+ peer-reviewed publications since 2005 — 15+ journal articles and book chapters, 25+ international conference papers on speech recognition, synthesis, voice conversion and prosody.</p>
@@ -318,7 +334,7 @@
 
   <!-- CONTACT / FOOTER -->
   <section id="contact" style="border-top:1px solid var(--ink); background:var(--ink); color:var(--bg);">
-    <div style="max-width:1080px; margin:0 auto; padding:88px 32px 56px;">
+    <div class="contact-pad" style="max-width:1080px; margin:0 auto; padding:88px 32px 56px;">
       <div style="font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); margin-bottom:28px;">06 — Contact</div>
       <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:clamp(32px,5vw,60px); line-height:1.05; margin:0 0 40px; letter-spacing:-0.01em; max-width:760px;">Let's put agents to work.</h2>
       <div style="display:flex; flex-wrap:wrap; gap:36px; font-family:'IBM Plex Mono', monospace; font-size:13.5px;">
